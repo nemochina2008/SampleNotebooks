@@ -1,8 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\nSample notebook with very simple and introductory Spark Commands with Spark 2.*",
-      "dateUpdated": "Dec 25, 2016 6:42:10 AM",
+      "title": "Sample notebook with very simple and introductory Spark Commands with Spark 2.*",
+      "text": "%md",
+      "dateUpdated": "Dec 26, 2016 7:16:48 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -15,7 +16,8 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/markdown"
+        "editorMode": "ace/mode/markdown",
+        "title": true
       },
       "settings": {
         "params": {},
@@ -25,18 +27,18 @@
       "id": "20161223-064406_1998917030",
       "result": {
         "code": "SUCCESS",
-        "type": "HTML",
-        "msg": "\u003cp\u003eSample notebook with very simple and introductory Spark Commands with Spark 2.*\u003c/p\u003e\n"
+        "type": "TEXT",
+        "msg": ""
       },
       "dateCreated": "Dec 23, 2016 6:44:06 AM",
-      "dateStarted": "Dec 25, 2016 6:42:10 AM",
-      "dateFinished": "Dec 25, 2016 6:42:11 AM",
+      "dateStarted": "Dec 26, 2016 7:16:48 AM",
+      "dateFinished": "Dec 26, 2016 7:16:48 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// By default scala is used in notebook.\nspark.version",
-      "dateUpdated": "Dec 25, 2016 6:42:21 AM",
+      "dateUpdated": "Dec 26, 2016 7:16:51 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -60,17 +62,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "res1: String \u003d 2.0.0\n"
+        "msg": "res4: String \u003d 2.0.0\n"
       },
       "dateCreated": "Dec 23, 2016 6:50:03 AM",
-      "dateStarted": "Dec 25, 2016 6:42:21 AM",
-      "dateFinished": "Dec 25, 2016 6:43:59 AM",
+      "dateStarted": "Dec 26, 2016 7:16:51 AM",
+      "dateFinished": "Dec 26, 2016 7:16:51 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\nOne can use Python, R, Markdown, Shell, Angular in notebooks.",
-      "dateUpdated": "Dec 23, 2016 7:13:35 AM",
+      "dateUpdated": "Dec 26, 2016 6:51:00 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -97,14 +99,14 @@
         "msg": "\u003cp\u003eOne can use Python, R, Markdown, Shell, Angular in notebooks.\u003c/p\u003e\n"
       },
       "dateCreated": "Dec 23, 2016 6:52:24 AM",
-      "dateStarted": "Dec 23, 2016 7:13:35 AM",
-      "dateFinished": "Dec 23, 2016 7:13:35 AM",
+      "dateStarted": "Dec 26, 2016 6:51:02 AM",
+      "dateFinished": "Dec 26, 2016 6:51:02 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n\nsampleDf \u003d spark.range(1000)",
-      "dateUpdated": "Dec 23, 2016 7:13:35 AM",
+      "dateUpdated": "Dec 26, 2016 7:17:07 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -131,14 +133,14 @@
         "msg": ""
       },
       "dateCreated": "Dec 23, 2016 6:50:49 AM",
-      "dateStarted": "Dec 23, 2016 7:13:35 AM",
-      "dateFinished": "Dec 23, 2016 7:13:35 AM",
+      "dateStarted": "Dec 26, 2016 7:17:07 AM",
+      "dateFinished": "Dec 26, 2016 7:17:16 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\nprint sampleDf",
-      "dateUpdated": "Dec 23, 2016 7:13:35 AM",
+      "dateUpdated": "Dec 26, 2016 7:17:19 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -165,14 +167,14 @@
         "msg": "DataFrame[id: bigint]\n"
       },
       "dateCreated": "Dec 23, 2016 7:10:51 AM",
-      "dateStarted": "Dec 23, 2016 7:13:35 AM",
-      "dateFinished": "Dec 23, 2016 7:13:35 AM",
+      "dateStarted": "Dec 26, 2016 7:17:19 AM",
+      "dateFinished": "Dec 26, 2016 7:17:19 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md Some sample transformations and actions.",
-      "dateUpdated": "Dec 23, 2016 7:45:39 AM",
+      "dateUpdated": "Dec 26, 2016 7:17:30 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -199,14 +201,14 @@
         "msg": "\u003cp\u003eSome sample transformations and actions.\u003c/p\u003e\n"
       },
       "dateCreated": "Dec 23, 2016 7:44:56 AM",
-      "dateStarted": "Dec 23, 2016 7:45:39 AM",
-      "dateFinished": "Dec 23, 2016 7:45:39 AM",
+      "dateStarted": "Dec 26, 2016 7:17:30 AM",
+      "dateFinished": "Dec 26, 2016 7:17:30 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\nfirstTenIds \u003d sampleDf.select(sampleDf[\"id\"]).filter(sampleDf[\"id\"] \u003c 10)",
-      "dateUpdated": "Dec 23, 2016 7:53:03 AM",
+      "dateUpdated": "Dec 26, 2016 7:17:35 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -233,14 +235,14 @@
         "msg": ""
       },
       "dateCreated": "Dec 23, 2016 7:45:39 AM",
-      "dateStarted": "Dec 23, 2016 7:53:03 AM",
-      "dateFinished": "Dec 23, 2016 7:53:03 AM",
+      "dateStarted": "Dec 26, 2016 7:17:35 AM",
+      "dateFinished": "Dec 26, 2016 7:17:35 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\nprint firstTenIds.show()",
-      "dateUpdated": "Dec 23, 2016 7:53:49 AM",
+      "text": "%pyspark\n# No jobs are run till now, when an action is called a spark job is triggered.\nprint firstTenIds.show()",
+      "dateUpdated": "Dec 26, 2016 7:20:16 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -265,10 +267,10 @@
           "label": "JOB UI",
           "group": "spark",
           "values": [
-            "https://qa3.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-184-73-122-162.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1482475402718_0001/jobs/job?id\u003d3",
-            "https://qa3.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-184-73-122-162.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1482475402718_0001/jobs/job?id\u003d4"
+            "https://qa3.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-23-23-15-184.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1482733792289_0001/jobs/job?id\u003d2",
+            "https://qa3.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-23-23-15-184.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1482733792289_0001/jobs/job?id\u003d3"
           ],
-          "interpreterSettingId": "2C7HGXM22119221482475442967"
+          "interpreterSettingId": "2C6ASKXKJ119221482733864623"
         }
       },
       "jobName": "paragraph_1482479231949_-1168142939",
@@ -279,14 +281,14 @@
         "msg": "+---+\n| id|\n+---+\n|  0|\n|  1|\n|  2|\n|  3|\n|  4|\n|  5|\n|  6|\n|  7|\n|  8|\n|  9|\n+---+\n\nNone\n"
       },
       "dateCreated": "Dec 23, 2016 7:47:11 AM",
-      "dateStarted": "Dec 23, 2016 7:53:49 AM",
-      "dateFinished": "Dec 23, 2016 7:53:50 AM",
+      "dateStarted": "Dec 26, 2016 7:20:16 AM",
+      "dateFinished": "Dec 26, 2016 7:20:16 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "",
-      "dateUpdated": "Dec 23, 2016 8:00:53 AM",
+      "dateUpdated": "Dec 26, 2016 6:51:01 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -307,18 +309,25 @@
       },
       "jobName": "paragraph_1482479607828_2033905973",
       "id": "20161223-075327_1465402308",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
       "dateCreated": "Dec 23, 2016 7:53:27 AM",
-      "status": "READY",
+      "dateStarted": "Dec 26, 2016 6:53:02 AM",
+      "dateFinished": "Dec 26, 2016 6:53:02 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     }
   ],
   "name": "Spark-Intro",
   "id": "KWMAEZSWK21482475110",
   "angularObjects": {
-    "2C3VENHXP119221482475442977": [],
-    "2C4P32T6G119221482475442979": [],
-    "2C4QDHD7B119221482475442980": [],
-    "2C7HGXM22119221482475442967": []
+    "2C6CPVK3V119221482647643123": [],
+    "2C68KHZW2119221482647643117": [],
+    "2C3YJCUQV119221482647643120": [],
+    "2C5GX8T4X119221482647643133": []
   },
   "config": {},
   "info": {},
