@@ -1,0 +1,618 @@
+{
+  "paragraphs": [
+    {
+      "title": "Reading data from a file",
+      "text": "%r\ndata1 \u003c- read.df(\"s3://dev.canopydata.com/vipulm/data/pypariris.parquet\", \"parquet\")\ndata2 \u003c- read.df(\"s3://dev.canopydata.com/vipulm/data/train.csv\", \"csv\")\ndata3 \u003c- read.df(\"s3://dev.canopydata.com/vipulm/data/test1.json\",\"json\")\nhead(data1)\nhead(data2)\nhead(data3)",
+      "dateUpdated": "Feb 13, 2017 6:07:22 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486965717425_867470234",
+      "id": "20170213-060157_795207098",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSepal_Length Sepal_Width Petal_Length Petal_Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n  _c0  _c1  _c2  _c3  _c4  _c5  _c6  _c7  _c8  _c9  _c10  _c11  _c12  _c13\n1  id cat1 cat2 cat3 cat4 cat5 cat6 cat7 cat8 cat9 cat10 cat11 cat12 cat13\n2   1    A    B    A    B    A    A    A    A    B     A     B     A     A\n3   2    A    B    A    A    A    A    A    A    B     B     A     A     A\n4   5    A    B    A    A    B    A    A    A    B     B     B     B     B\n5  10    B    B    A    B    A    A    A    A    B     A     A     A     A\n6  11    A    B    A    B    A    A    A    A    B     B     A     B     A\n   _c14  _c15  _c16  _c17  _c18  _c19  _c20  _c21  _c22  _c23  _c24  _c25\n1 cat14 cat15 cat16 cat17 cat18 cat19 cat20 cat21 cat22 cat23 cat24 cat25\n2     A     A     A     A     A     A     A     A     A     B     A     A\n3     A     A     A     A     A     A     A     A     A     A     A     A\n4     A     A     A     A     A     A     A     A     A     A     A     A\n5     A     A     A     A     A     A     A     A     A     B     A     A\n6     A     A     A     A     A     A     A     A     A     B     A     A\n   _c26  _c27  _c28  _c29  _c30  _c31  _c32  _c33  _c34  _c35  _c36  _c37\n1 cat26 cat27 cat28 cat29 cat30 cat31 cat32 cat33 cat34 cat35 cat36 cat37\n2     A     A     A     A     A     A     A     A     A     A     A     A\n3     A     A     A     A     A     A     A     A     A     A     A     A\n4     A     A     A     A     A     A     A     A     A     A     B     A\n5     A     A     A     A     A     A     A     A     A     A     A     A\n6     A     A     A     A     A     A     A     A     A     A     A     A\n   _c38  _c39  _c40  _c41  _c42  _c43  _c44  _c45  _c46  _c47  _c48  _c49\n1 cat38 cat39 cat40 cat41 cat42 cat43 cat44 cat45 cat46 cat47 cat48 cat49\n2     A     A     A     A     A     A     A     A     A     A     A     A\n3     A     A     A     A     A     A     A     A     A     A     A     A\n4     A     A     A     A     A     A     A     A     A     A     A     A\n5     A     A     A     A     A     A     A     A     A     A     A     A\n6     A     A     A     A     A     A     A     A     A     A     A     A\n   _c50  _c51  _c52  _c53  _c54  _c55  _c56  _c57  _c58  _c59  _c60  _c61\n1 cat50 cat51 cat52 cat53 cat54 cat55 cat56 cat57 cat58 cat59 cat60 cat61\n2     A     A     A     A     A     A     A     A     A     A     A     A\n3     A     A     A     A     A     A     A     A     A     A     A     A\n4     A     A     A     A     A     A     A     A     A     A     A     A\n5     A     A     A     A     A     A     A     A     A     A     A     A\n6     A     A     A     A     A     A     A     A     A     A     A     A\n   _c62  _c63  _c64  _c65  _c66  _c67  _c68  _c69  _c70  _c71  _c72  _c73\n1 cat62 cat63 cat64 cat65 cat66 cat67 cat68 cat69 cat70 cat71 cat72 cat73\n2     A     A     A     A     A     A     A     A     A     A     A     A\n3     A     A     A     A     A     A     A     A     A     A     A     A\n4     A     A     A     A     A     A     A     A     A     A     A     A\n5     A     A     A     A     A     A     A     A     A     A     A     B\n6     A     A     A     A     A     A     A     A     A     A     B     A\n   _c74  _c75  _c76  _c77  _c78  _c79  _c80  _c81  _c82  _c83  _c84  _c85\n1 cat74 cat75 cat76 cat77 cat78 cat79 cat80 cat81 cat82 cat83 cat84 cat85\n2     A     B     A     D     B     B     D     D     B     D     C     B\n3     A     A     A     D     B     B     D     D     A     B     C     B\n4     A     A     A     D     B     B     B     D     B     D     C     B\n5     A     A     A     D     B     B     D     D     D     B     C     B\n6     A     A     A     D     B     D     B     D     B     B     C     B\n   _c86  _c87  _c88  _c89  _c90  _c91  _c92  _c93  _c94  _c95  _c96  _c97\n1 cat86 cat87 cat88 cat89 cat90 cat91 cat92 cat93 cat94 cat95 cat96 cat97\n2     D     B     A     A     A     A     A     D     B     C     E     A\n3     D     B     A     A     A     A     A     D     D     C     E     E\n4     B     B     A     A     A     A     A     D     D     C     E     E\n5     D     B     A     A     A     A     A     D     D     C     E     E\n6     B     C     A     A     A     B     H     D     B     D     E     E\n   _c98  _c99  _c100  _c101  _c102  _c103  _c104  _c105  _c106  _c107\n1 cat98 cat99 cat100 cat101 cat102 cat103 cat104 cat105 cat106 cat107\n2     C     T      B      G      A      A      I      E      G      J\n3     D     T      L      F      A      A      E      E      I      K\n4     A     D      L      O      A      B      E      F      H      F\n5     D     T      I      D      A      A      E      E      I      K\n6     A     P      F      J      A      A      D      E      K      G\n   _c108  _c109  _c110  _c111  _c112  _c113  _c114  _c115  _c116    _c117\n1 cat108 cat109 cat110 cat111 cat112 cat113 cat114 cat115 cat116    cont1\n2      G     BU     BC      C     AS      S      A      O     LB   0.7263\n3      K     BI     CQ      A     AV     BM      A      O     DP 0.330514\n4      A     AB     DK      A      C     AF      A      I     GK 0.261841\n5      K     BI     CS      C      N     AE      A      O     DJ 0.321594\n6      B      H      C      C      Y     BM      A      K     CK 0.273204\n     _c118    _c119    _c120    _c121    _c122    _c123   _c124   _c125\n1    cont2    cont3    cont4    cont5    cont6    cont7   cont8   cont9\n2 0.245921 0.187583 0.789639 0.310061 0.718367  0.33506  0.3026 0.67135\n3 0.737068 0.592681 0.614134 0.885834 0.438917 0.436585 0.60087 0.35127\n4 0.358319 0.484196 0.236924 0.397069 0.289648 0.315545  0.2732 0.26076\n5 0.555782 0.527991 0.373816 0.422268 0.440945 0.391128 0.31796 0.32128\n6  0.15999 0.527991 0.473202 0.704268 0.178193 0.247408 0.24564 0.22089\n    _c126    _c127    _c128    _c129    _c130   _c131\n1  cont10   cont11   cont12   cont13   cont14    loss\n2  0.8351 0.569745 0.594646 0.822493 0.714843 2213.18\n3 0.43919 0.338312 0.366307 0.611431 0.304496  1283.6\n4 0.32446 0.381398 0.373424 0.195709 0.774425 3005.09\n5 0.44467 0.327915  0.32157 0.605077 0.602642  939.85\n6  0.2123 0.204687 0.202213 0.246011 0.432606 2763.85\n  a b\n1 1 2\n2 3 4\n\n\n\n"
+      },
+      "dateCreated": "Feb 13, 2017 6:01:57 AM",
+      "dateStarted": "Feb 13, 2017 6:07:22 AM",
+      "dateFinished": "Feb 13, 2017 6:07:25 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Reading from a table to a spark dataframe using sql",
+      "text": "%r\nresult \u003c- sql(\"from src select key,value\")\nresult\nhead(result)",
+      "dateUpdated": "Feb 10, 2017 2:29:43 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484735882767_871009210",
+      "id": "20170118-103802_1713006561",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSparkDataFrame[key:int, value:string]\n  key  value\n1   1 Qubole\n\n\n\n"
+      },
+      "dateCreated": "Jan 18, 2017 10:38:02 AM",
+      "dateStarted": "Jan 23, 2017 6:14:49 AM",
+      "dateFinished": "Jan 23, 2017 6:14:56 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Display specific columns of a spark data frame",
+      "text": "%r\ndf \u003c- as.DataFrame(faithful)\ndf\n\nhead(select(df,\"eruptions\",\"waiting\"))\nhead(select(df,df$eruptions,df$waiting))\n#head(select(df,df$eruptions,\"waiting\"))\n",
+      "dateUpdated": "Feb 10, 2017 10:15:26 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484735921031_-1203374614",
+      "id": "20170118-103841_239112902",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSparkDataFrame[eruptions:double, waiting:double]\n  eruptions waiting\n1     3.600      79\n2     1.800      54\n3     3.333      74\n4     2.283      62\n5     4.533      85\n6     2.883      55\n  eruptions waiting\n1     3.600      79\n2     1.800      54\n3     3.333      74\n4     2.283      62\n5     4.533      85\n6     2.883      55\n\n\n\n"
+      },
+      "dateCreated": "Jan 18, 2017 10:38:41 AM",
+      "dateStarted": "Feb 10, 2017 10:15:26 AM",
+      "dateFinished": "Feb 10, 2017 10:15:37 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Simple aggregations : sum, count",
+      "text": "%r\nhead(select(df,sum(df$eruptions)))\nhead(select(waitcount,waitcount$count))",
+      "dateUpdated": "Feb 10, 2017 10:20:55 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484736689987_-1991391791",
+      "id": "20170118-105129_1670717230",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nsum(eruptions)\n1        948.677\n  count\n1     4\n2     1\n3     2\n4     6\n5     5\n6     4\n\n\n\n"
+      },
+      "dateCreated": "Jan 18, 2017 10:51:29 AM",
+      "dateStarted": "Jan 19, 2017 9:21:36 AM",
+      "dateFinished": "Jan 19, 2017 9:21:37 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Simple aggregations : groupBy, arrange",
+      "text": "%r\n\nwaitcount \u003c- summarize(groupBy(df,df$waiting),count \u003d n(df$waiting),sum(df$waiting))\nhead(waitcount)\nhead(arrange(waitcount,asc(waitcount$count)))\nwaitsec \u003c-select(df,df$waiting*60)\nhead(waitsec)\n\n",
+      "dateUpdated": "Feb 10, 2017 10:21:31 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484736099104_-597887114",
+      "id": "20170118-104139_322256261",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nwaiting count sum(waiting)\n1      70     4          280\n2      67     1           67\n3      69     2          138\n4      88     6          528\n5      49     5          245\n6      64     4          256\n  waiting count sum(waiting)\n1      68     1           68\n2      94     1           94\n3      72     1           72\n4      67     1           67\n5      96     1           96\n6      92     1           92\n  (waiting * 60.0)\n1             4740\n2             3240\n3             4440\n4             3720\n5             5100\n6             3300\n\n\n\n"
+      },
+      "dateCreated": "Jan 18, 2017 10:41:39 AM",
+      "dateStarted": "Jan 19, 2017 9:21:29 AM",
+      "dateFinished": "Jan 19, 2017 9:21:32 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "agg function: apply aggregation functions to grouped data",
+      "text": "%r\n\nirisdf \u003c- as.DataFrame(iris)\nd1 \u003c- filter(irisdf,irisdf$Sepal_Length\u003e\u003d5.0)\nd2 \u003c- agg(group_by(d1,d1$Species),count \u003d n(d1$Species), sum(d1$Sepal_Length)) \n\nhead(d2)\n",
+      "dateUpdated": "Feb 10, 2017 2:30:08 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484813591296_-2012619947",
+      "id": "20170119-081311_1261520151",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSepal_Length Sepal_Width Petal_Length Petal_Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          5.0         3.6          1.4         0.2  setosa\n3          5.4         3.9          1.7         0.4  setosa\n4          5.0         3.4          1.5         0.2  setosa\n5          5.4         3.7          1.5         0.2  setosa\n6          5.8         4.0          1.2         0.2  setosa\n\n\n\n"
+      },
+      "dateCreated": "Jan 19, 2017 8:13:11 AM",
+      "dateStarted": "Jan 23, 2017 6:48:21 AM",
+      "dateFinished": "Jan 23, 2017 6:48:22 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "sql in sparkR",
+      "text": "%r\n\nsql(\"CREATE TABLE ta1 (ID INT, name varchar)\")\nsql(\"INSERT INTO ta1 VALUES (1,\u0027a\u0027),(2,\u0027b\u0027),(3,\u0027c\u0027)\")\n\nsql(\"CREATE TABLE ta2 (ID INT, grade double)\")\nsql(\"INSERT INTO ta2 VALUES (1,7.8),(2,8.6),(3,9.5)\")\n\ndf1 \u003c- sql(\"select * from ta1\")\ndf2 \u003c- sql(\"select * from ta2\")\nhead(df1)\nhead(df2)\n\nsql(\"drop table ta1\")\nsql(\"drop table ta2\")\n\n#head(join(df1,df2))\njoin(df1,df2,df1$ID\u003d\u003ddf2$ID)\n",
+      "dateUpdated": "Jan 23, 2017 6:33:20 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484814170861_1281255902",
+      "id": "20170119-082250_581550195",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSparkDataFrame[]\nSparkDataFrame[]\nSparkDataFrame[]\nSparkDataFrame[]\n  id name\n1  1    a\n2  2    b\n3  3    c\n  id grade\n1  1   7.8\n2  2   8.6\n3  3   9.5\nSparkDataFrame[]\nSparkDataFrame[]\nSparkDataFrame[id:int, name:string, id:int, grade:double]\n\n\n\n"
+      },
+      "dateCreated": "Jan 19, 2017 8:22:50 AM",
+      "dateStarted": "Jan 23, 2017 6:24:33 AM",
+      "dateFinished": "Jan 23, 2017 6:25:13 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "dapply",
+      "text": "%r\n\ndf \u003c- createDataFrame(faithful)\n\nschema \u003c- structType(structField(\"eruptions\", \"double\"), structField(\"waiting\", \"double\"),\n                     structField(\"waiting_secs\", \"double\"))\n                     \ndf1 \u003c- dapply(df, function(x) { x \u003c- cbind(x, x$waiting * 60) }, schema)\n\nhead(collect(df1))",
+      "dateUpdated": "Feb 13, 2017 9:24:53 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486977871726_-2061090756",
+      "id": "20170213-092431_680365130",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\neruptions waiting waiting_secs\n1     3.600      79         4740\n2     1.800      54         3240\n3     3.333      74         4440\n4     2.283      62         3720\n5     4.533      85         5100\n6     2.883      55         3300\n\n\n\n"
+      },
+      "dateCreated": "Feb 13, 2017 9:24:31 AM",
+      "dateStarted": "Feb 13, 2017 9:24:53 AM",
+      "dateFinished": "Feb 13, 2017 9:24:54 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "%\u003e% operator",
+      "text": "%r\nlibrary(magrittr)\ndf \u003c- createDataFrame(iris)\ndf %\u003e%\n  select(\"Sepal_Length\", \"Species\") %\u003e%\n  filter(df$Sepal_Length \u003e\u003d 5.5) %\u003e%\n  group_by(df$Species) %\u003e%\n  summarize(count \u003d n(df$Sepal_Length), mean \u003d mean(df$Sepal_Length)) %\u003e%\n  collect\n  \nhead(df)",
+      "dateUpdated": "Jan 23, 2017 9:21:49 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485152511564_1953492569",
+      "id": "20170123-062151_2074445077",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\n Species count     mean\n\n\n1  virginica    49 6.622449\n2 versicolor    44 6.050000\n3     setosa     5 5.640000\n  Sepal_Length Sepal_Width Petal_Length Petal_Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\n\n"
+      },
+      "dateCreated": "Jan 23, 2017 6:21:51 AM",
+      "dateStarted": "Jan 23, 2017 9:21:49 AM",
+      "dateFinished": "Jan 23, 2017 9:21:50 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "%\u003e% operator",
+      "text": "%r\n\nlibrary(magrittr)\n\nirisdf \u003c- as.DataFrame(iris)\nirisdf\nselect(irisdf,\"Sepal_Length\",\"Species\") %\u003e% filter(irisdf$Sepal_Length\u003e\u003d5.0) %\u003e% group_by(irisdf$Species) %\u003e% summarize(count \u003d n(irisdf$Species)) %\u003e% collect\n",
+      "dateUpdated": "Jan 23, 2017 9:58:03 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484895578938_-1087411028",
+      "id": "20170120-065938_1627136636",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSparkDataFrame[Sepal_Length:double, Sepal_Width:double, Petal_Length:double, Petal_Width:double, Species:string]\n     Species count\n1  virginica    49\n2 versicolor    49\n3     setosa    30\n\n\n\n"
+      },
+      "dateCreated": "Jan 20, 2017 6:59:38 AM",
+      "dateStarted": "Jan 23, 2017 9:58:03 AM",
+      "dateFinished": "Jan 23, 2017 9:59:44 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Subsetting spark dataframe",
+      "text": "%r\n\ndf \u003c- createDataFrame(iris)\nhead(df)\n\n#filter rows\nhead(df[df$Species \u003d\u003d \"virginica\"])\nhead(df[df$Sepal_Length\u003e5.0])\n\n#select column\nhead(df[,\"Sepal_Length\"])\n\n#df can be subsetted on both rows and columns\nhead(df[df$Species \u003d\u003d \"virginica\" \u0026 (df$Sepal_Length\u003e7.0 | df$Sepal_Length\u003c5.0 ), c(1,5)])\nhead(df[df$Species %in% c(\"setosa\",\"virginica\"),1:2])\nhead(subset(df,df$Species %in% c(\"setosa\",\"virginica\"),1:2))",
+      "dateUpdated": "Jan 24, 2017 11:40:28 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485162581406_1959916320",
+      "id": "20170123-090941_365679851",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSepal_Length Sepal_Width Petal_Length Petal_Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n  Sepal_Length Sepal_Width Petal_Length Petal_Width   Species\n1          6.3         3.3          6.0         2.5 virginica\n2          5.8         2.7          5.1         1.9 virginica\n3          7.1         3.0          5.9         2.1 virginica\n4          6.3         2.9          5.6         1.8 virginica\n5          6.5         3.0          5.8         2.2 virginica\n6          7.6         3.0          6.6         2.1 virginica\n  Sepal_Length Sepal_Width Petal_Length Petal_Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          5.4         3.9          1.7         0.4  setosa\n3          5.4         3.7          1.5         0.2  setosa\n4          5.8         4.0          1.2         0.2  setosa\n5          5.7         4.4          1.5         0.4  setosa\n6          5.4         3.9          1.3         0.4  setosa\n  Sepal_Length\n1          5.1\n2          4.9\n3          4.7\n4          4.6\n5          5.0\n6          5.4\n  Sepal_Length   Species\n1          7.1 virginica\n2          7.6 virginica\n3          4.9 virginica\n4          7.3 virginica\n5          7.2 virginica\n6          7.7 virginica\n  Sepal_Length Sepal_Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n6          5.4         3.9\n  Sepal_Length Sepal_Width\n1          5.1         3.5\n2          4.9         3.0\n3          4.7         3.2\n4          4.6         3.1\n5          5.0         3.6\n6          5.4         3.9\n\n\n\n"
+      },
+      "dateCreated": "Jan 23, 2017 9:09:41 AM",
+      "dateStarted": "Jan 24, 2017 11:40:28 AM",
+      "dateFinished": "Jan 24, 2017 11:40:29 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Read hive table to spark df and write spark df to hive table",
+      "text": "%r\n\nresult \u003c- sql(\"from default_qubole_airline_origin_destination select *\")\nresult\nsaveAsTable(result,\"tableforresult\")\nreading \u003c- sql(\"select * from tableforresult\")\nhead(reading)\nsql(\"drop table tableforresult\")",
+      "dateUpdated": "Feb 10, 2017 10:29:55 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485328721721_1088557562",
+      "id": "20170125-071841_1531985325",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSparkDataFrame[itinid:string, mktid:string, seqnum:string, coupons:string, year:string, quarter:string, origin:string, originaptind:string, origincitynum:string, origincountry:string, originstatefips:string, originstate:string, originstatename:string, originwac:string, dest:string, destaptind:string, destcitynum:string, destcountry:string, deststatefips:string, deststate:string, deststatename:string, destwac:string, break:string, coupontype:string, tkcarrier:string, opcarrier:string, rpcarrier:string, passengers:string, fareclass:string, distance:string, distancegroup:string, gateway:string, itingeotype:string, coupongeotype:string]\nNULL\n          itinid          mktid seqnum coupons year quarter origin\n1 “200732544817” “200734564155”      3       4 2007       3  “COS”\n2 “200732544817” “200734564155”      4       4 2007       3  “ATL”\n3 “200732544818” “200734564156”      1       4 2007       3  “GSP”\n4 “200732544818” “200734564156”      2       4 2007       3  “ATL”\n5 “200732544818” “200734564157”      3       4 2007       3  “COS”\n6 “200732544818” “200734564157”      4       4 2007       3  “ATL”\n  originaptind origincitynum origincountry originstatefips originstate\n1            0         20410          “US”            “08”        “CO”\n2            0          5852          “US”            “13”        “GA”\n3            0         33530          “US”            “45”        “SC”\n4            0          5852          “US”            “13”        “GA”\n5            0         20410          “US”            “08”        “CO”\n6            0          5852          “US”            “13”        “GA”\n   originstatename originwac  dest destaptind destcitynum destcountry\n1       “Colorado”        82 “ATL”          0        5852        “US”\n2        “Georgia”        34 “GSP”          0       33530        “US”\n3 “South Carolina”        37 “ATL”          0        5852        “US”\n4        “Georgia”        34 “COS”          0       20410        “US”\n5       “Colorado”        82 “ATL”          0        5852        “US”\n6        “Georgia”        34 “GSP”          0       33530        “US”\n  deststatefips deststate    deststatename destwac break coupontype\n1          “13”      “GA”        “Georgia”      34    “”        “D”\n2          “45”      “SC” “South Carolina”      37   “X”        “D”\n3          “13”      “GA”        “Georgia”      34    “”        “D”\n4          “08”      “CO”       “Colorado”      82   “X”        “D”\n5          “13”      “GA”        “Georgia”      34    “”        “A”\n6          “45”      “SC” “South Carolina”      37   “X”        “A”\n  tkcarrier opcarrier rpcarrier passengers fareclass distance\n1      “DL”      “OO”      “OO”       1.00       “X”  1185.00\n2      “DL”      “F8”      “OO”       1.00       “X”   153.00\n3      “DL”      “OO”      “OO”       1.00       “X”   153.00\n4      “DL”      “OO”      “OO”       1.00       “X”  1185.00\n5      “DL”      “DL”      “OO”       1.00       “X”  1185.00\n6      “DL”      “DL”      “OO”       1.00       “X”   153.00\n  distancegroup gateway itingeotype coupongeotype\n1             3    0.00           2             2\n2             1    0.00           2             2\n3             1    0.00           2             2\n4             3    0.00           2             2\n5             3    0.00           2             2\n6             1    0.00           2             2\nSparkDataFrame[]\n\n\n\n"
+      },
+      "dateCreated": "Jan 25, 2017 7:18:41 AM",
+      "dateStarted": "Feb 10, 2017 10:29:55 AM",
+      "dateFinished": "Feb 10, 2017 10:45:55 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Read and write a spark df to a hive table ",
+      "text": "%r\nrm(list\u003dls())\nresult \u003c- createDataFrame(iris)\nresult\nsaveAsTable(result,\"tableforiris\")\nreading \u003c- sql(\"from tableforiris select * \")\nhead(reading)\nsql(\"drop table tableforiris\")",
+      "dateUpdated": "Feb 10, 2017 2:30:47 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485334612058_1691487495",
+      "id": "20170125-085652_178272667",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSparkDataFrame[Sepal_Length:double, Sepal_Width:double, Petal_Length:double, Petal_Width:double, Species:string]\nNULL\n  Sepal_Length Sepal_Width Petal_Length Petal_Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\nSparkDataFrame[Sepal_Length:double, Sepal_Width:double, Petal_Length:double, Petal_Width:double, Species:string]\nSparkDataFrame[]\n\n\n\n"
+      },
+      "dateCreated": "Jan 25, 2017 8:56:52 AM",
+      "dateStarted": "Jan 25, 2017 9:57:45 AM",
+      "dateFinished": "Jan 25, 2017 9:58:25 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Write a spark df to a parquet file, read parquet file to a spark df ",
+      "text": "%r\n\npariris \u003c- createDataFrame(iris)\nwrite.parquet(pariris,\"pariris1.parquet\")\nparquetFile \u003c- read.parquet(\"pariris1.parquet\")\nparquetFile",
+      "dateUpdated": "Feb 10, 2017 2:31:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485336333153_-965184524",
+      "id": "20170125-092533_1424246286",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSparkDataFrame[Sepal_Length:double, Sepal_Width:double, Petal_Length:double, Petal_Width:double, Species:string]\n\n\n\n"
+      },
+      "dateCreated": "Jan 25, 2017 9:25:33 AM",
+      "dateStarted": "Jan 25, 2017 10:02:38 AM",
+      "dateFinished": "Jan 25, 2017 10:02:39 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Write spark df to parquet using saveDF()",
+      "text": "%r\n\npariris \u003c- createDataFrame(iris)\n#write.parquet(pariris,\"pariris1.parquet\")\nsaveDF(pariris,\"pariris2.parquet\",\"parquet\")\nparquetFile \u003c- read.parquet(\"pariris2.parquet\")\nparquetFile",
+      "dateUpdated": "Feb 10, 2017 2:31:09 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485338523187_1062505416",
+      "id": "20170125-100203_845087853",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSparkDataFrame[Sepal_Length:double, Sepal_Width:double, Petal_Length:double, Petal_Width:double, Species:string]\n\n\n\n"
+      },
+      "dateCreated": "Jan 25, 2017 10:02:03 AM",
+      "dateStarted": "Jan 25, 2017 10:10:34 AM",
+      "dateFinished": "Jan 25, 2017 10:10:35 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Write spark df to parquet using saveAsParquetFile(), read using parquetFile()",
+      "text": "%r\nsqlContext \u003c- sparkRSQL.init(sc)\npariris \u003c- createDataFrame(iris)\nsaveAsParquetFile(pariris, \"pariri.parquet\")\nparquetFile \u003c- parquetFile(sqlContext, \"pariri.parquet\")\n\n",
+      "dateUpdated": "Feb 10, 2017 2:31:15 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485339034314_-1090229266",
+      "id": "20170125-101034_1430281418",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\n\n\n\n"
+      },
+      "dateCreated": "Jan 25, 2017 10:10:34 AM",
+      "dateStarted": "Jan 25, 2017 10:37:11 AM",
+      "dateFinished": "Jan 25, 2017 10:37:11 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Feb 10, 2017 2:31:37 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485342563424_1960437064",
+      "id": "20170125-110923_7847242",
+      "dateCreated": "Jan 25, 2017 11:09:23 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "operations on dataframes",
+  "id": "X5RS9SYDJ51484735830",
+  "angularObjects": {
+    "2C8N4YW67401321484730097862": [],
+    "2C67918PB401321484730097837": [],
+    "2C7CTTFFG401321484730097872": [],
+    "2C95FTB17401321484730097831": []
+  },
+  "config": {},
+  "info": {},
+  "source": "FCN"
+}
