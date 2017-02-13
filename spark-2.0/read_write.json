@@ -1,0 +1,310 @@
+{
+  "paragraphs": [
+    {
+      "title": "R : Read from a hive table to sparkdf",
+      "text": "%r\n\nresult \u003c- sql(\"from default_qubole_airline_origin_destination select *\")\nresult\n#head(result)",
+      "dateUpdated": "Jan 27, 2017 6:46:02 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485497548070_-874130275",
+      "id": "20170127-061228_581550195",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSparkDataFrame[itinid:string, mktid:string, seqnum:string, coupons:string, year:string, quarter:string, origin:string, originaptind:string, origincitynum:string, origincountry:string, originstatefips:string, originstate:string, originstatename:string, originwac:string, dest:string, destaptind:string, destcitynum:string, destcountry:string, deststatefips:string, deststate:string, deststatename:string, destwac:string, break:string, coupontype:string, tkcarrier:string, opcarrier:string, rpcarrier:string, passengers:string, fareclass:string, distance:string, distancegroup:string, gateway:string, itingeotype:string, coupongeotype:string]\n\n\n\n"
+      },
+      "dateCreated": "Jan 27, 2017 6:12:28 AM",
+      "dateStarted": "Jan 27, 2017 6:16:19 AM",
+      "dateFinished": "Jan 27, 2017 6:16:19 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Py : Read a hive table to sparkdf",
+      "text": "%pyspark\n\nreaddata \u003d spark.sql(\"select * from src\")\nreaddata.show()",
+      "dateUpdated": "Jan 27, 2017 6:46:20 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "group": "spark",
+          "values": [
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-23-23-44-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485494327711_0001/jobs/job?spark\u003dtrue\u0026id\u003d21",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-23-23-44-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485494327711_0001/jobs/job?spark\u003dtrue\u0026id\u003d22"
+          ],
+          "interpreterSettingId": "2C7CTTFFG401321484730097872"
+        }
+      },
+      "jobName": "paragraph_1485497803900_-1716165540",
+      "id": "20170127-061643_177525914",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+---+------+\n|key| value|\n+---+------+\n|  1|Qubole|\n+---+------+\n\n"
+      },
+      "dateCreated": "Jan 27, 2017 6:16:43 AM",
+      "dateStarted": "Jan 27, 2017 6:19:04 AM",
+      "dateFinished": "Jan 27, 2017 6:19:10 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Scala : Read a hive table to sparkdf",
+      "text": "val scread \u003d sql(\"select * from src\")\nscread.show()\n",
+      "dateUpdated": "Jan 27, 2017 7:30:31 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "group": "spark",
+          "values": [
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-23-23-44-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485494327711_0001/jobs/job?spark\u003dtrue\u0026id\u003d41",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-23-23-44-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485494327711_0001/jobs/job?spark\u003dtrue\u0026id\u003d42"
+          ],
+          "interpreterSettingId": "2C7CTTFFG401321484730097872"
+        }
+      },
+      "jobName": "paragraph_1485502088176_1551652411",
+      "id": "20170127-072808_393567239",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "scread: org.apache.spark.sql.DataFrame \u003d [key: int, value: string]\n+---+------+\n|key| value|\n+---+------+\n|  1|Qubole|\n+---+------+\n\n"
+      },
+      "dateCreated": "Jan 27, 2017 7:28:08 AM",
+      "dateStarted": "Jan 27, 2017 7:29:51 AM",
+      "dateFinished": "Jan 27, 2017 7:29:53 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "R: Read and write a spark df to a parquet file",
+      "text": "%r\n\npariris \u003c- createDataFrame(iris)\nwrite.parquet(pariris,\"s3://dev.canopydata.com/vipulm/data/rpariris.parquet\")\nparquetFile \u003c- read.parquet(\"s3://dev.canopydata.com/vipulm/data/rpariris.parquet\")\nhead(parquetFile)\n",
+      "dateUpdated": "Feb 13, 2017 6:16:57 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485497861219_879643344",
+      "id": "20170127-061741_1878863522",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nError in invokeJava(isStatic \u003d FALSE, objId$id, methodName, ...): org.apache.spark.sql.AnalysisException: path s3://dev.canopydata.com/vipulm/data/rpariris.parquet already exists.;\n    at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:88)\n    at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:60)\n    at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:58)\n    at org.apache.spark.sql.execution.command.ExecutedCommandExec.doExecute(commands.scala:74)\n    at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)\n    at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:115)\n    at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:136)\n    at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)\n    at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:133)\n    at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:114)\n    at org.apache.spark.sql.execution.QueryExecution.toRdd$lzycompute(QueryExecution.scala:86)\n    at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:86)\n    at org.apache.spark.sql.execution.datasources.DataSource.write(DataSource.scala:487)\n    at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:211)\n    at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:194)\n    at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:478)\n    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)\n    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n    at java.lang.reflect.Method.invoke(Method.java:606)\n    at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)\n    at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)\n    at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)\n    at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)\n    at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)\n    at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)\n    at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)\n    at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)\n    at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)\n    at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)\n    at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)\n    at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)\n    at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)\n    at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)\n    at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)\n    at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)\n    at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)\n    at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)\n    at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)\n    at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)\n    at java.lang.Thread.run(Thread.java:745)\n\n\nSepal_Length Sepal_Width Petal_Length Petal_Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\n\n"
+      },
+      "dateCreated": "Jan 27, 2017 6:17:41 AM",
+      "dateStarted": "Feb 13, 2017 6:16:57 AM",
+      "dateFinished": "Feb 13, 2017 6:16:58 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Py : Read .parquet file to sparkdf, write sparkdf to .parquet file",
+      "text": "%pyspark\n\n#reading a parquet file into spark df\nreadpar \u003d spark.read.parquet(\"s3://dev.canopydata.com/vipulm/data/rpariris.parquet\")\nreadpar.show()\n\n#writing readpar (spark df) to a .parquet file\nreadpar.write.parquet(\"s3://dev.canopydata.com/vipulm/data/pypariris2.parquet\")\n",
+      "dateUpdated": "Jan 31, 2017 5:53:26 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "group": "spark",
+          "values": [
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-205-65-51.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485835827475_0003/jobs/job?spark\u003dtrue\u0026id\u003d0",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-205-65-51.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485835827475_0003/jobs/job?spark\u003dtrue\u0026id\u003d1",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-205-65-51.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485835827475_0003/jobs/job?spark\u003dtrue\u0026id\u003d2"
+          ],
+          "interpreterSettingId": "2C7CTTFFG401321484730097872"
+        }
+      },
+      "jobName": "paragraph_1485498702141_-1010832150",
+      "id": "20170127-063142_1491507836",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+------------+-----------+------------+-----------+-------+\n|Sepal_Length|Sepal_Width|Petal_Length|Petal_Width|Species|\n+------------+-----------+------------+-----------+-------+\n|         5.1|        3.5|         1.4|        0.2| setosa|\n|         4.9|        3.0|         1.4|        0.2| setosa|\n|         4.7|        3.2|         1.3|        0.2| setosa|\n|         4.6|        3.1|         1.5|        0.2| setosa|\n|         5.0|        3.6|         1.4|        0.2| setosa|\n|         5.4|        3.9|         1.7|        0.4| setosa|\n|         4.6|        3.4|         1.4|        0.3| setosa|\n|         5.0|        3.4|         1.5|        0.2| setosa|\n|         4.4|        2.9|         1.4|        0.2| setosa|\n|         4.9|        3.1|         1.5|        0.1| setosa|\n|         5.4|        3.7|         1.5|        0.2| setosa|\n|         4.8|        3.4|         1.6|        0.2| setosa|\n|         4.8|        3.0|         1.4|        0.1| setosa|\n|         4.3|        3.0|         1.1|        0.1| setosa|\n|         5.8|        4.0|         1.2|        0.2| setosa|\n|         5.7|        4.4|         1.5|        0.4| setosa|\n|         5.4|        3.9|         1.3|        0.4| setosa|\n|         5.1|        3.5|         1.4|        0.3| setosa|\n|         5.7|        3.8|         1.7|        0.3| setosa|\n|         5.1|        3.8|         1.5|        0.3| setosa|\n+------------+-----------+------------+-----------+-------+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Jan 27, 2017 6:31:42 AM",
+      "dateStarted": "Jan 31, 2017 5:53:26 AM",
+      "dateFinished": "Jan 31, 2017 5:54:57 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Scala : read, write parquet file",
+      "text": "//reading a parquet file into spark df\nval readpar \u003d sqlContext.read.parquet(\"s3://dev.canopydata.com/vipulm/data/rpariris.parquet\")\nreadpar.show()\n//writing readpar (spark df) to a .parquet file\nreadpar.write.parquet(\"s3://dev.canopydata.com/vipulm/data/par-write.parquet\")\n\nval df \u003d sqlContext.read.parquet(\"s3://dev.canopydata.com/vipulm/data/par-write.parquet\")\ndf.show()",
+      "dateUpdated": "Jan 31, 2017 6:40:37 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "group": "spark",
+          "values": [
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-205-65-51.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485835827475_0003/jobs/job?spark\u003dtrue\u0026id\u003d3",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-205-65-51.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485835827475_0003/jobs/job?spark\u003dtrue\u0026id\u003d4",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-205-65-51.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485835827475_0003/jobs/job?spark\u003dtrue\u0026id\u003d5",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-205-65-51.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485835827475_0003/jobs/job?spark\u003dtrue\u0026id\u003d6",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-205-65-51.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485835827475_0003/jobs/job?spark\u003dtrue\u0026id\u003d7"
+          ],
+          "interpreterSettingId": "2C7CTTFFG401321484730097872"
+        }
+      },
+      "jobName": "paragraph_1485844475080_1201082738",
+      "id": "20170131-063435_332660971",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "readpar: org.apache.spark.sql.DataFrame \u003d [Sepal_Length: double, Sepal_Width: double ... 3 more fields]\n+------------+-----------+------------+-----------+-------+\n|Sepal_Length|Sepal_Width|Petal_Length|Petal_Width|Species|\n+------------+-----------+------------+-----------+-------+\n|         5.1|        3.5|         1.4|        0.2| setosa|\n|         4.9|        3.0|         1.4|        0.2| setosa|\n|         4.7|        3.2|         1.3|        0.2| setosa|\n|         4.6|        3.1|         1.5|        0.2| setosa|\n|         5.0|        3.6|         1.4|        0.2| setosa|\n|         5.4|        3.9|         1.7|        0.4| setosa|\n|         4.6|        3.4|         1.4|        0.3| setosa|\n|         5.0|        3.4|         1.5|        0.2| setosa|\n|         4.4|        2.9|         1.4|        0.2| setosa|\n|         4.9|        3.1|         1.5|        0.1| setosa|\n|         5.4|        3.7|         1.5|        0.2| setosa|\n|         4.8|        3.4|         1.6|        0.2| setosa|\n|         4.8|        3.0|         1.4|        0.1| setosa|\n|         4.3|        3.0|         1.1|        0.1| setosa|\n|         5.8|        4.0|         1.2|        0.2| setosa|\n|         5.7|        4.4|         1.5|        0.4| setosa|\n|         5.4|        3.9|         1.3|        0.4| setosa|\n|         5.1|        3.5|         1.4|        0.3| setosa|\n|         5.7|        3.8|         1.7|        0.3| setosa|\n|         5.1|        3.8|         1.5|        0.3| setosa|\n+------------+-----------+------------+-----------+-------+\nonly showing top 20 rows\n\ndf: org.apache.spark.sql.DataFrame \u003d [Sepal_Length: double, Sepal_Width: double ... 3 more fields]\n+------------+-----------+------------+-----------+-------+\n|Sepal_Length|Sepal_Width|Petal_Length|Petal_Width|Species|\n+------------+-----------+------------+-----------+-------+\n|         5.1|        3.5|         1.4|        0.2| setosa|\n|         4.9|        3.0|         1.4|        0.2| setosa|\n|         4.7|        3.2|         1.3|        0.2| setosa|\n|         4.6|        3.1|         1.5|        0.2| setosa|\n|         5.0|        3.6|         1.4|        0.2| setosa|\n|         5.4|        3.9|         1.7|        0.4| setosa|\n|         4.6|        3.4|         1.4|        0.3| setosa|\n|         5.0|        3.4|         1.5|        0.2| setosa|\n|         4.4|        2.9|         1.4|        0.2| setosa|\n|         4.9|        3.1|         1.5|        0.1| setosa|\n|         5.4|        3.7|         1.5|        0.2| setosa|\n|         4.8|        3.4|         1.6|        0.2| setosa|\n|         4.8|        3.0|         1.4|        0.1| setosa|\n|         4.3|        3.0|         1.1|        0.1| setosa|\n|         5.8|        4.0|         1.2|        0.2| setosa|\n|         5.7|        4.4|         1.5|        0.4| setosa|\n|         5.4|        3.9|         1.3|        0.4| setosa|\n|         5.1|        3.5|         1.4|        0.3| setosa|\n|         5.7|        3.8|         1.7|        0.3| setosa|\n|         5.1|        3.8|         1.5|        0.3| setosa|\n+------------+-----------+------------+-----------+-------+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Jan 31, 2017 6:34:35 AM",
+      "dateStarted": "Jan 31, 2017 6:39:13 AM",
+      "dateFinished": "Jan 31, 2017 6:39:22 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "",
+      "dateUpdated": "Jan 31, 2017 6:19:20 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485514310618_-168063346",
+      "id": "20170127-105150_2026886275",
+      "dateCreated": "Jan 27, 2017 10:51:50 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "reading data (hive tables,parquet, avro)",
+  "id": "8CGA6ZJJF91485497547",
+  "angularObjects": {
+    "2C8N4YW67401321484730097862": [],
+    "2C67918PB401321484730097837": [],
+    "2C7CTTFFG401321484730097872": [],
+    "2C95FTB17401321484730097831": []
+  },
+  "config": {},
+  "info": {},
+  "source": "FCN"
+}
