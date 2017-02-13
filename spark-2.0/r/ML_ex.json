@@ -1,0 +1,171 @@
+{
+  "paragraphs": [
+    {
+      "title": "glm",
+      "text": "%r\ndata(iris)\ndf \u003c- createDataFrame(iris)\nmodel \u003c- spark.glm(df,Sepal_Length ~ Sepal_Width, family\u003d\"gaussian\")\nsummary(model)\nfit \u003c- predict(model,df)\nhead(select(fit,\"Sepal_Length\",\"prediction\"))\nfit\n",
+      "dateUpdated": "Feb 13, 2017 9:22:12 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1484910814009_1365822035",
+      "id": "20170120-111334_1842846681",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nDeviance Residuals: \n(Note: These are approximate quantiles with relative error \u0026lt;\u003d 0.01)\n     Min        1Q    Median        3Q       Max\n-1.55614  -0.64446  -0.12315   0.53321   2.22255  \n\nCoefficients:\n             Estimate  Std. Error  t value  Pr(\u0026gt;|t|)\n(Intercept)  6.5262    0.4789      13.628   0\nSepal_Width  -0.22336  0.15508     -1.4403  0.1519  \n\n(Dispersion parameter for gaussian family taken to be 0.6807844)\n\nNull deviance: 102.17  on 149  degrees of freedom\n\n\nResidual deviance: 100.76  on 148  degrees of freedom\nAIC: 372\n\nNumber of Fisher Scoring iterations: 1\n\nSepal_Length prediction\n1          5.1   5.744459\n2          4.9   5.856139\n3          4.7   5.811467\n4          4.6   5.833803\n5          5.0   5.722123\n6          5.4   5.655114\nSparkDataFrame[Sepal_Length:double, Sepal_Width:double, Petal_Length:double, Petal_Width:double, Species:string, label:double, prediction:double]\n\n\n\n"
+      },
+      "dateCreated": "Jan 20, 2017 11:13:34 AM",
+      "dateStarted": "Feb 13, 2017 9:22:12 AM",
+      "dateFinished": "Feb 13, 2017 9:22:50 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "k means",
+      "text": "%r\n\ndata2 \u003c- createDataFrame(iris)\nmodel \u003c- spark.kmeans(data2,Sepal_Length ~ Sepal_Width,k\u003d5,initMode\u003d\"random\")\n#summary(model)\npredicted \u003c- predict(model,data2)\n#head(predicted)\nhead(select(predicted,\"Sepal_Length\",\"prediction\"))\n",
+      "dateUpdated": "Jan 23, 2017 6:08:19 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485144209332_2012517400",
+      "id": "20170123-040329_585701853",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nSepal_Length prediction\n1          5.1          3\n2          4.9          1\n3          4.7          1\n4          4.6          1\n5          5.0          3\n6          5.4          3\n\n\n\n"
+      },
+      "dateCreated": "Jan 23, 2017 4:03:29 AM",
+      "dateStarted": "Jan 23, 2017 6:08:19 AM",
+      "dateFinished": "Jan 23, 2017 6:08:23 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Naive Bayes ",
+      "text": "%r\ndata \u003c- as.data.frame(UCBAdmissions)\ndf \u003c- createDataFrame(data)\nmodel \u003c- spark.naiveBayes(df, Admit ~ Gender + Dept, smoothing \u003d 0)\npredicted \u003c- predict(model,df)\ndis \u003c- select(predicted,\"Admit\",\"prediction\")\nhead(dis)\n\n",
+      "dateUpdated": "Feb 13, 2017 6:16:49 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485144743305_571001712",
+      "id": "20170123-041223_870268398",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\n Admit prediction\n\n\n1 Admitted   Admitted\n2 Rejected   Admitted\n3 Admitted   Admitted\n4 Rejected   Admitted\n5 Admitted   Admitted\n6 Rejected   Admitted\n\n\n\n"
+      },
+      "dateCreated": "Jan 23, 2017 4:12:23 AM",
+      "dateStarted": "Feb 13, 2017 6:16:13 AM",
+      "dateFinished": "Feb 13, 2017 6:16:17 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "glm example (train+validation)",
+      "text": "%r\nrm(list\u003dls())\nlibrary(dplyr)\n\ntrain \u003c- createDataFrame(longley)\ndata \u003c- train\nsplit \u003c- data %\u003e% randomSplit(c(0.7, 0.3))\n\ntrainingData   \u003c- split[[1]] %\u003e% cache\nvalidationData \u003c- split[[2]] %\u003e% cache\n\nmodel \u003c- trainingData %\u003e% spark.glm(Employed ~ ., family\u003d\"gaussian\")\n\ntrainPredictionsAndLabels \u003c- model %\u003e% predict(trainingData) %\u003e% subset(select\u003d(c(\"label\",\"prediction\")))\nvalidPredictionsAndLabels \u003c- model %\u003e% predict(validationData) %\u003e% subset(select\u003d(c(\"label\",\"prediction\")))\n\nhead(trainPredictionsAndLabels)\n\nmse \u003c- function(df){\n  df$se \u003c- (df$label - df$prediction)^2\n  #mean(as.data.frame(trainPredictionsAndLabels)$se)\n  mean(as.data.frame(df)$se)\n}\n\nrmse \u003c- function(df){\n  sqrt(mse(df))\n}\n\nmae \u003c- function(df){\n  df$se \u003c- abs(df$label - df$prediction)\n  #mean(as.data.frame(trainPredictionsAndLabels)$se)\n  mean(as.data.frame(df)$se)\n}\n\noutput \u003d c(paste0(\"Training data MSE \u003d \", mse(trainPredictionsAndLabels)),\n  paste0(\"Training data RMSE \u003d \", rmse(trainPredictionsAndLabels)),\n  paste0(\"Training data MAE \u003d  \", mae(trainPredictionsAndLabels)),\n  \"\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\",\n  paste0(\"Validation data MSE \u003d \", mse(validPredictionsAndLabels)),\n  paste0(\"Validation data RMSE \u003d \", rmse(validPredictionsAndLabels)),\n  paste0(\"Validation data MAE \u003d  \", mae(validPredictionsAndLabels)))\n\nprint(output)\n",
+      "dateUpdated": "Feb 10, 2017 9:54:14 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1485145247866_-2142327441",
+      "id": "20170123-042047_265200548",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nlabel prediction\n1 61.187   61.28418\n2 63.221   62.97209\n3 63.639   63.95549\n4 64.989   64.89888\n5 63.761   63.78150\n6 67.857   67.60564\n[1] “Training data MSE \u003d 0.0442896749134545”\n[2] “Training data RMSE \u003d 0.210451122385827”\n[3] “Training data MAE \u003d  0.176203708772197”\n[4] “\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d”\n[5] “Validation data MSE \u003d 0.663633299547095”\n[6] “Validation data RMSE \u003d 0.814636912708413”\n[7] “Validation data MAE \u003d  0.77304880264173”                              \n\n\n\n"
+      },
+      "dateCreated": "Jan 23, 2017 4:20:47 AM",
+      "dateStarted": "Jan 24, 2017 10:11:48 AM",
+      "dateFinished": "Jan 24, 2017 10:11:51 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486969048200_1732002060",
+      "id": "20170213-065728_2139399203",
+      "dateCreated": "Feb 13, 2017 6:57:28 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "ML ex",
+  "id": "ZPP1YPM2991484910631",
+  "angularObjects": {
+    "2C8N4YW67401321484730097862": [],
+    "2C67918PB401321484730097837": [],
+    "2C7CTTFFG401321484730097872": [],
+    "2C95FTB17401321484730097831": []
+  },
+  "config": {},
+  "info": {},
+  "source": "FCN"
+}
