@@ -1,0 +1,125 @@
+{
+  "paragraphs": [
+    {
+      "title": "Scala : read, write avro ",
+      "text": "val df2 \u003d sqlContext.read.format(\"com.databricks.spark.avro\").load(\"s3://dev.canopydata.com/vipulm/data/episodes.avro\")\ndf2.collect.foreach(println)\n\ndf2.write.format(\"com.databricks.spark.avro\").mode(org.apache.spark.sql.SaveMode.Overwrite).save(\"s3://dev.canopydata.com/vipulm/data/avro-write\")\n\nval df3 \u003d sqlContext.read.format(\"com.databricks.spark.avro\").load(\"s3://dev.canopydata.com/vipulm/data/avro-write\")\ndf3.collect.foreach(println)\n",
+      "dateUpdated": "Jan 31, 2017 6:17:03 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "group": "spark",
+          "values": [
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-227-68-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485839054064_0007/jobs/job?id\u003d1",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-227-68-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485839054064_0007/jobs/job?id\u003d2",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-227-68-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485839054064_0007/jobs/job?id\u003d3"
+          ],
+          "interpreterSettingId": "2C742NREC419291485417298570"
+        }
+      },
+      "jobName": "paragraph_1485843082188_2127553156",
+      "id": "20170131-061122_406322006",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "df2: org.apache.spark.sql.DataFrame \u003d [title: string, air_date: string, doctor: int]\n[The Eleventh Hour,3 April 2010,11]\n[The Doctor\u0027s Wife,14 May 2011,11]\n[Horror of Fang Rock,3 September 1977,4]\n[An Unearthly Child,23 November 1963,1]\n[The Mysterious Planet,6 September 1986,6]\n[Rose,26 March 2005,9]\n[The Power of the Daleks,5 November 1966,2]\n[Castrolava,4 January 1982,5]\ndf3: org.apache.spark.sql.DataFrame \u003d [title: string, air_date: string, doctor: int]\n[The Eleventh Hour,3 April 2010,11]\n[The Doctor\u0027s Wife,14 May 2011,11]\n[Horror of Fang Rock,3 September 1977,4]\n[An Unearthly Child,23 November 1963,1]\n[The Mysterious Planet,6 September 1986,6]\n[Rose,26 March 2005,9]\n[The Power of the Daleks,5 November 1966,2]\n[Castrolava,4 January 1982,5]\n"
+      },
+      "dateCreated": "Jan 31, 2017 6:11:22 AM",
+      "dateStarted": "Jan 31, 2017 6:17:03 AM",
+      "dateFinished": "Jan 31, 2017 6:17:14 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "title": "Python : read,write avro",
+      "text": "%pyspark\n\ndf2 \u003d sqlContext.read.format(\"com.databricks.spark.avro\").load(\"s3://dev.canopydata.com/vipulm/data/episodes.avro\")\nfor x in df2.collect():\n    print(x)\n\ndf2.write.format(\"com.databricks.spark.avro\").mode(\"overwrite\").save(\"s3://dev.canopydata.com/vipulm/data/avro-write1\")\n\ndf3 \u003d sqlContext.read.format(\"com.databricks.spark.avro\").load(\"s3://dev.canopydata.com/vipulm/data/avro-write1\")\nfor x in df3.collect():\n    print(x)\n",
+      "dateUpdated": "Jan 31, 2017 6:41:21 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "group": "spark",
+          "values": [
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-227-68-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485839054064_0007/jobs/job?id\u003d13",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-227-68-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485839054064_0007/jobs/job?id\u003d14",
+            "https://qa2.qubole.net/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2Fec2-54-227-68-1.compute-1.amazonaws.com%3A8088%2Fproxy%2Fapplication_1485839054064_0007/jobs/job?id\u003d15"
+          ],
+          "interpreterSettingId": "2C742NREC419291485417298570"
+        }
+      },
+      "jobName": "paragraph_1485843149562_-2036691459",
+      "id": "20170131-061229_1917583638",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Row(title\u003du\u0027The Eleventh Hour\u0027, air_date\u003du\u00273 April 2010\u0027, doctor\u003d11)\nRow(title\u003du\"The Doctor\u0027s Wife\", air_date\u003du\u002714 May 2011\u0027, doctor\u003d11)\nRow(title\u003du\u0027Horror of Fang Rock\u0027, air_date\u003du\u00273 September 1977\u0027, doctor\u003d4)\nRow(title\u003du\u0027An Unearthly Child\u0027, air_date\u003du\u002723 November 1963\u0027, doctor\u003d1)\nRow(title\u003du\u0027The Mysterious Planet\u0027, air_date\u003du\u00276 September 1986\u0027, doctor\u003d6)\nRow(title\u003du\u0027Rose\u0027, air_date\u003du\u002726 March 2005\u0027, doctor\u003d9)\nRow(title\u003du\u0027The Power of the Daleks\u0027, air_date\u003du\u00275 November 1966\u0027, doctor\u003d2)\nRow(title\u003du\u0027Castrolava\u0027, air_date\u003du\u00274 January 1982\u0027, doctor\u003d5)\nRow(title\u003du\u0027The Eleventh Hour\u0027, air_date\u003du\u00273 April 2010\u0027, doctor\u003d11)\nRow(title\u003du\"The Doctor\u0027s Wife\", air_date\u003du\u002714 May 2011\u0027, doctor\u003d11)\nRow(title\u003du\u0027Horror of Fang Rock\u0027, air_date\u003du\u00273 September 1977\u0027, doctor\u003d4)\nRow(title\u003du\u0027An Unearthly Child\u0027, air_date\u003du\u002723 November 1963\u0027, doctor\u003d1)\nRow(title\u003du\u0027The Mysterious Planet\u0027, air_date\u003du\u00276 September 1986\u0027, doctor\u003d6)\nRow(title\u003du\u0027Rose\u0027, air_date\u003du\u002726 March 2005\u0027, doctor\u003d9)\nRow(title\u003du\u0027The Power of the Daleks\u0027, air_date\u003du\u00275 November 1966\u0027, doctor\u003d2)\nRow(title\u003du\u0027Castrolava\u0027, air_date\u003du\u00274 January 1982\u0027, doctor\u003d5)\n"
+      },
+      "dateCreated": "Jan 31, 2017 6:12:29 AM",
+      "dateStarted": "Jan 31, 2017 6:41:21 AM",
+      "dateFinished": "Jan 31, 2017 6:41:30 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1486723181297_892307467",
+      "id": "20170210-103941_555706165",
+      "dateCreated": "Feb 10, 2017 10:39:41 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "avro",
+  "id": "PCPZRC6BYW1485843081",
+  "angularObjects": {
+    "2C84DQ9C1419291485417298710": [],
+    "2C7NQFNJN419291485417298694": [],
+    "2C94RH2F7419291485417298705": [],
+    "2C742NREC419291485417298570": []
+  },
+  "config": {},
+  "info": {},
+  "source": "FCN"
+}
